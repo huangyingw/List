@@ -36,7 +36,6 @@ class List
 		ListNode * FindAppropriateNode(int value);
 		
 		void IncreInsertNode(ListNode *node);
-		void AftInsert(int value);
 		int*Remove(int i);
 		int*Get(int i);
 		void List::RevList();
@@ -61,35 +60,29 @@ List MergeCreateNew(List list1,List list2)
 	p2=list2.first;
 	if(p1->data<p2->data)
 	{
-		result.AftInsert(p1->data);
 		p1=p1->next;
 	}
 	else
 	{
-		result.AftInsert(p2->data);
 		p2=p2->next;
 	}
 	while(p1&&p2)
 	{
 		if(p1->data<p2->data)
 		{
-			result.AftInsert(p1->data);
 			p1=p1->next;
 		}
 		else
 		{
-			result.AftInsert(p2->data);
 			p2=p2->next;
 		}
 	}
 	while(p1)
 	{
-		result.AftInsert(p1->data);
 		p1=p1->next;
 	}
 	while(p2)
 	{
-		result.AftInsert(p2->data);
 		p2=p2->next;
 	}
 	return result;
@@ -167,22 +160,6 @@ ListNode*List::FindValue(int value)
     return tmpptr;
 }
 
-void List::AftInsert(int value)
-{
-	if(!first)
-	{
-		first=new ListNode(value);
-		first->next=NULL;
-		last=first;
-    }
-	else
-	{
-		ListNode* temp=new ListNode(value);
-		last->next=temp;
-		temp->next=NULL;
-		last=temp;
-	}
-}
 
 istream& operator>>(istream&in,List&x)
 {
@@ -190,7 +167,6 @@ istream& operator>>(istream&in,List&x)
     in>>value;
 	while(value!='q')
 	{
-		x.AftInsert(value-48);
 		in>>value;
 	}
 	return in;
