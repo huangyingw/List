@@ -7,7 +7,6 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	List list1,list2;
 	return 0;
 }
 
