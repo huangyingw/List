@@ -51,7 +51,8 @@ class List
 		void List::RevList();
 		ListNode* List::RevListWithRecursion(ListNode* head);
 		void List::PrintFromNode(ListNode* node);
-	
+	private:
+		ofstream fout; 	
 		
 };
 
