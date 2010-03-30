@@ -28,8 +28,6 @@ class List
 		int*Remove(int i);
 		int*Get(int i);
 		void List::RevList();
-		ListNode* List::RevListWithRecursion(ListNode* head);
-		void List::PrintFromNode(ListNode* node);
 	private:
 		ofstream fout; 	
 		
@@ -84,34 +82,4 @@ void List::RevList()
 	}
 	r->next=l;
 	first=r;
-}
-
-void List::PrintFromNode(ListNode* node)
-{
-	while(NULL!=node)
-	{
-		cout<<node->data<<",";
-		node=node->next;
-	}
-	cout<<endl;
-}
-
-ListNode* List::RevListWithRecursion(ListNode* head)
-{
-	ListNode* rhead;
-	if(NULL==head)
-	{
-		return head;
-	}
-	else if(NULL==head->next)
-	{
-		return head;
-	}
-	else
-	{
-		rhead=RevListWithRecursion(head->next);
-		head->next->next=head;
-		head->next=NULL;
-		return rhead;
-	}
 }
