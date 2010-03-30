@@ -33,6 +33,7 @@ class List
 		ListNode * FindValue(int value);
 		
 		ListNode * FindAppropriateNode(int value);
+		List MergeCreateNew();
 		
 		void IncreInsertNode(ListNode *node);
 		int*Remove(int i);
@@ -50,8 +51,7 @@ int ListNode::RetNodeValue()
 	return data;
 }
 
-
-List MergeCreateNew()
+List List::MergeCreateNew()
 {
 	List result(8);
 	return result;
