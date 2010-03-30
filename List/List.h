@@ -10,11 +10,9 @@ class ListNode
 		ListNode();
 		ListNode(const int& item);
 		ListNode *NextNode(){return next;}
-		void InsertAfter(ListNode*p);
 		
 		int RetNodeValue();
 
-		ListNode* GetNode(int item,ListNode* next);
 		ListNode*RemoveAfter();
 	private:
 		int data;
@@ -58,20 +56,7 @@ ListNode::ListNode():next(NULL){}
 
 ListNode::ListNode(const int& item):data(item),next(NULL){}
 
-void ListNode::InsertAfter(ListNode*p)
-{
-	p->next=next;
-	next=p;
-}
 
-ListNode* ListNode::GetNode(int item,ListNode* next)
-{
-    ListNode*newnode=new ListNode(item);
-	newnode->next=next;
-	return newnode;
-}
-
-		
 ListNode*ListNode::RemoveAfter()
 {
  	ListNode*tmpptr=this->next;
