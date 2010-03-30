@@ -51,7 +51,7 @@ int ListNode::RetNodeValue()
 }
 
 
-List MergeCreateNew(List list1,List list2)
+List MergeCreateNew()
 {
 	List result(8);
 	return result;
