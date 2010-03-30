@@ -1,6 +1,6 @@
-run : jpg.o
-	gcc -o run jpg.o
-jpg.o : jpg.c regulator.c fprintf.c
-	gcc -c jpg.c
+run : list.o
+	gcc -o run list.o
+list.o : list.cpp list.h
+	gcc -c list.cpp
 clean :
-	rm run jpg.o
+	rm run list.o
