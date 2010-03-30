@@ -6,7 +6,6 @@ class ListNode
 {
 	friend ostream& operator<<(ostream&out,List&x);
 	friend class List;
-	friend List MergeCreateNew(List list1,List list2);
 	friend void MergeList(List list1,List list2);
 	public:
 		ListNode();
@@ -54,7 +53,7 @@ int ListNode::RetNodeValue()
 
 List MergeCreateNew(List list1,List list2)
 {
-	List result;
+	List result(8);
 	return result;
 }
 
