@@ -103,8 +103,6 @@ List MergeCreateNew(List list1,List list2)
 	return result;
 }
 
-
-//将两个链表合并成一个，改变list1
 void MergeList(List list1,List list2)
 {
 	ListNode*p1,*p2,*temp;
@@ -118,14 +116,11 @@ void MergeList(List list1,List list2)
 	}
 }
 
-
-//下面给出类ListNode和类List的成员函数的实现
 ListNode::ListNode():next(NULL){}
 
-//构造函数，仅初始化指针成员
 ListNode::ListNode(const int& item):data(item),next(NULL){}
 
-void ListNode::InsertAfter(ListNode*p)//从当前结点插入p结点
+void ListNode::InsertAfter(ListNode*p)
 {
 	p->next=next;
 	next=p;
@@ -138,7 +133,6 @@ ListNode* ListNode::GetNode(int item,ListNode* next)
 	return newnode;
 }
 
-//将一个结点插入当前链表的按data递增的合适位置，此方法使用的前提是本list已经排好序
 void List::IncreInsertNode(ListNode *node)
 {
 	ListNode *pos=FindAppropriateNode(node->data);
@@ -146,7 +140,7 @@ void List::IncreInsertNode(ListNode *node)
 	pos->next=node;
 }
 		
-ListNode * List::FindAppropriateNode(int value)//在单链表中搜索数据value的适合插入结点，也即当前结点的值小于value而其后一个结点的值大于value
+ListNode * List::FindAppropriateNode(int value)
 {
 	ListNode*tmpptr=first;
 	if(tmpptr->data>value)
@@ -158,41 +152,38 @@ ListNode * List::FindAppropriateNode(int value)//在单链表中搜索数据value的适合插
 	return tmpptr;
 }
 		
-ListNode*ListNode::RemoveAfter()//从链中摘下当前结点的下一结点，并为删除它而返回其地址
+ListNode*ListNode::RemoveAfter()
 {
- 	ListNode*tmpptr=this->next;//tmpptr为我自己定义的临时变量;
+ 	ListNode*tmpptr=this->next;
 	this->next=tmpptr->next;
 	return tmpptr;
 }
 
 List::~List()
 {
-	//析构函数
 }
 
-void List::MakeEmpty()//将链表置为空表
+void List::MakeEmpty()
 {
 	ListNode*q;
 	while(first->next!=NULL)
     {
-		q=first->next;//q为临时定义的变量，用完之后得删除
+		q=first->next;
 		first=q->next;
 		delete q;
 	}
-	last=first;//将尾指针指向first
+	last=first;
 }
 
-int List::Length()const//
+int List::Length()const
 {
-	//计算带表头结点的单链表的长度
-	//定义一个变量len用于计数
 	int len=0;
 	for(ListNode* tmpptr=first->next;tmpptr!=NULL;tmpptr=tmpptr->next)
 		len++;
     return len;    
 }
 
-ListNode*List::FindValue(int value)//在单链表中搜索含数据value的结点，搜索成功时，函数返回该结点地址；否则返回NULL值
+ListNode*List::FindValue(int value)
 {
 	
 	ListNode* tmpptr=new ListNode;
@@ -204,11 +195,10 @@ ListNode*List::FindValue(int value)//在单链表中搜索含数据value的结点，搜索成功时
     return tmpptr;
 }
 
-ListNode* List::FindIndex(int i)//定位函数。函数返回链表中第i个元素的地址。若i<-1或i超出表中结点个数，则返回NULL。
+ListNode* List::FindIndex(int i)
 {
 	if(i<-1)return NULL;
 	if(i==-1)return first;
-	//表中结点个数用lenth函数返回给临时变量t
 	int t=Length();
 	if(i>t)return NULL;
 	ListNode*tmpptr=first;
@@ -217,14 +207,14 @@ ListNode* List::FindIndex(int i)//定位函数。函数返回链表中第i个元素的地址。若i<-
 	return tmpptr->next;
 }
 
-int List::InsertAtIndex(int value,int i)//将新元素value插入在链表中第i个位置
+int List::InsertAtIndex(int value,int i)
 {
-	ListNode*tmpptr=FindIndex(i-1);//返回第i-1个元素的地址
+	ListNode*tmpptr=FindIndex(i-1);
 	tmpptr->next=tmpptr->GetNode(value,tmpptr->next);
 	return 1;
 }
 
-void List::PreInsert(int value)//在first头结点处插入数据
+void List::PreInsert(int value)
 {
 	if(!first)
 	{
@@ -240,7 +230,7 @@ void List::PreInsert(int value)//在first头结点处插入数据
 }
 
 
-void List::AftInsert(int value)//在结尾插入数据
+void List::AftInsert(int value)
 {
 	if(!first)
 	{
@@ -295,7 +285,7 @@ void List::RevList()
 	first=r;
 }
 
-void List::PrintFromNode(ListNode* node)//从某个指定结点开始打印链表
+void List::PrintFromNode(ListNode* node)
 {
 	while(NULL!=node)
 	{
