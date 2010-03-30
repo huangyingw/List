@@ -32,10 +32,8 @@ class List
 		
 		ListNode * FindValue(int value);
 		
-		ListNode * FindAppropriateNode(int value);
 		List MergeCreateNew();
 		
-		void IncreInsertNode(ListNode *node);
 		int*Remove(int i);
 		int*Get(int i);
 		void List::RevList();
@@ -66,7 +64,6 @@ void MergeList(List list1,List list2)
 	{
 		temp=new ListNode(p2->data);
 		p2=p2->next;
-		list1.IncreInsertNode(temp);
 	}
 }
 
@@ -87,24 +84,6 @@ ListNode* ListNode::GetNode(int item,ListNode* next)
 	return newnode;
 }
 
-void List::IncreInsertNode(ListNode *node)
-{
-	ListNode *pos=FindAppropriateNode(node->data);
-	node->next=pos->next;
-	pos->next=node;
-}
-		
-ListNode * List::FindAppropriateNode(int value)
-{
-	ListNode*tmpptr=first;
-	if(tmpptr->data>value)
-		return tmpptr;
-	while(tmpptr->next&&tmpptr->next->data<value)
-	{
-		tmpptr=tmpptr->next;
-	}
-	return tmpptr;
-}
 		
 ListNode*ListNode::RemoveAfter()
 {
