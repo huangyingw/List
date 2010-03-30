@@ -55,36 +55,6 @@ int ListNode::RetNodeValue()
 List MergeCreateNew(List list1,List list2)
 {
 	List result;
-	ListNode*p1,*p2;
-	p1=list1.first;
-	p2=list2.first;
-	if(p1->data<p2->data)
-	{
-		p1=p1->next;
-	}
-	else
-	{
-		p2=p2->next;
-	}
-	while(p1&&p2)
-	{
-		if(p1->data<p2->data)
-		{
-			p1=p1->next;
-		}
-		else
-		{
-			p2=p2->next;
-		}
-	}
-	while(p1)
-	{
-		p1=p1->next;
-	}
-	while(p2)
-	{
-		p2=p2->next;
-	}
 	return result;
 }
 
