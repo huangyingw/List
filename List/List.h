@@ -4,12 +4,12 @@ using namespace std;
 class List
 {
 	public:
-		List MergeCreateNew();
+		List& MergeCreateNew();
 	private:
 		ofstream fout; 	
 };
 
-List List::MergeCreateNew()
+List& List::MergeCreateNew()
 {
 	List result;
 	return result;
