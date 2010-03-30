@@ -1,7 +1,6 @@
 #include <fstream>
-//using namespace std;
+using namespace std;
 
-/*
 class List
 {
 	public:
@@ -15,4 +14,3 @@ List& List::MergeCreateNew()
 	List result;
 	return result;
 }
-*/
