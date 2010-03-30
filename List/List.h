@@ -4,7 +4,6 @@ using namespace std;
 class List;
 class ListNode
 {
-	friend ostream& operator<<(ostream&out,List&x);
 	friend class List;
 	public:
 		ListNode();
@@ -55,11 +54,4 @@ istream& operator>>(istream&in,List&x)
 		in>>value;
 	}
 	return in;
-}
-
-ostream& operator<<(ostream&out,List&x)
-{
-	for(ListNode* tmpptr=x.first;tmpptr!=NULL;tmpptr=tmpptr->next)
-		out<<tmpptr->data;
-	return out;
 }
