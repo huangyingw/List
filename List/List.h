@@ -1,43 +1,43 @@
 using namespace std;
-class List;//前视的类定义
-class ListNode//链表结点类的声明
+class List;
+class ListNode
 {
 	friend ostream& operator<<(ostream&out,List&x);
 	friend class List;
-	friend List MergeCreateNew(List list1,List list2);//将两个链表合成第三个，
-	friend void MergeList(List list1,List list2);//将两个链表合成一个，
+	friend List MergeCreateNew(List list1,List list2);
+	friend void MergeList(List list1,List list2);
 	public:
 		ListNode();
 		ListNode(const int& item);
-		ListNode *NextNode(){return next;}//给出当前结点的下一个结点地址
-		void InsertAfter(ListNode*p);//当前结点插入
+		ListNode *NextNode(){return next;}
+		void InsertAfter(ListNode*p);
 		
-		int RetNodeValue();//返回指定结点的值
+		int RetNodeValue();
 
-		ListNode* GetNode(int item,ListNode* next);//建立一个新结点
-		ListNode*RemoveAfter();//删除当前结点的下一结点
+		ListNode* GetNode(int item,ListNode* next);
+		ListNode*RemoveAfter();
 	private:
-		int data;//数据域
-		ListNode* next;//链指针域
+		int data;
+		ListNode* next;
 };
 
-class List//单链表类定义
+class List
 {
 	friend ostream& operator<<(ostream&out,List&x);
 	friend istream& operator>>(istream&,List&);
-	friend List MergeCreateNew(List list1,List list2);//将两个链表合成第三个，
-	friend void MergeList(List list1,List list2);//将两个链表合成一个，
+	friend List MergeCreateNew(List list1,List list2);
+	friend void MergeList(List list1,List list2);
 	public:
-		ListNode*first,*last;//链表的表头指针，表尾指针
+		ListNode*first,*last;
         List(){last=first=NULL;}
 		List(const int value){last=first=new ListNode(value);}
 		~List();
 		void MakeEmpty();
 		int Length()const;
 		
-		ListNode * FindValue(int value);//在单链表中搜索含数据value的结点，搜索成功时，函数返回该结点地址；否则返回NULL值
+		ListNode * FindValue(int value);
 		
-		ListNode * FindAppropriateNode(int value);//在单链表中搜索数据value的适合插入结点，也即当前结点的值小于value而其后一个结点的值大于value
+		ListNode * FindAppropriateNode(int value);
 		ListNode * FindIndex(int i);//搜索链表中第i个元素的地址
 		
 		void IncreInsertNode(ListNode *node);//以递增的方式建链表
