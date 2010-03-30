@@ -6,7 +6,6 @@ class ListNode
 {
 	friend ostream& operator<<(ostream&out,List&x);
 	friend class List;
-	friend void MergeList(List list1,List list2);
 	public:
 		ListNode();
 		ListNode(const int& item);
@@ -53,18 +52,6 @@ List List::MergeCreateNew()
 {
 	List result(8);
 	return result;
-}
-
-void MergeList(List list1,List list2)
-{
-	ListNode*p1,*p2,*temp;
-	p1=list1.first;
-	p2=list2.first;
-	while(p2)
-	{
-		temp=new ListNode(p2->data);
-		p2=p2->next;
-	}
 }
 
 ListNode::ListNode():next(NULL){}
