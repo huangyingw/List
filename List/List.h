@@ -1,5 +1,6 @@
 #include <fstream>
 using namespace std;
+
 class List;
 class ListNode
 {
@@ -39,29 +40,28 @@ class List
 		ListNode * FindValue(int value);
 		
 		ListNode * FindAppropriateNode(int value);
-		ListNode * FindIndex(int i);//搜索链表中第i个元素的地址
+		ListNode * FindIndex(int i);
 		
-		void IncreInsertNode(ListNode *node);//以递增的方式建链表
+		void IncreInsertNode(ListNode *node);
 		void PreInsert(int value);
 		void AftInsert(int value);
-		int InsertAtIndex(int value,int i);//将新元素value插入在链表中第i个位置
-		int*Remove(int i);//将链表中的第i个元素删去
-		int*Get(int i);//取出链表中第i个元素
+		int InsertAtIndex(int value,int i);
+		int*Remove(int i);
+		int*Get(int i);
 		void List::RevList();
-		ListNode* List::RevListWithRecursion(ListNode* head);//用递归的方法实现的链表逆序
-		void List::PrintFromNode(ListNode* node);//从某个指定结点开始打印链表
+		ListNode* List::RevListWithRecursion(ListNode* head);
+		void List::PrintFromNode(ListNode* node);
 	
 		
 };
 
-
-int ListNode::RetNodeValue()//返回指定结点的值
+int ListNode::RetNodeValue()
 {
 	return data;
 }
 
 
-List MergeCreateNew(List list1,List list2)//将两个链表合成第三个，
+List MergeCreateNew(List list1,List list2)
 {
 	List result;
 	ListNode*p1,*p2;
