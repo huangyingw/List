@@ -30,7 +30,6 @@ class List
         List(){last=first=NULL;}
 		List(const int value){last=first=new ListNode(value);}
 		~List();
-		void MakeEmpty();
 		int Length()const;
 		
 		ListNode * FindValue(int value);
@@ -158,18 +157,6 @@ ListNode*ListNode::RemoveAfter()
 
 List::~List()
 {
-}
-
-void List::MakeEmpty()
-{
-	ListNode*q;
-	while(first->next!=NULL)
-    {
-		q=first->next;
-		first=q->next;
-		delete q;
-	}
-	last=first;
 }
 
 int List::Length()const
