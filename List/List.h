@@ -25,10 +25,6 @@ class ListNode
 
 class List
 {
-	friend ostream& operator<<(ostream&out,List&x);
-	friend istream& operator>>(istream&,List&);
-	friend List MergeCreateNew(List list1,List list2);
-	friend void MergeList(List list1,List list2);
 	public:
 		ListNode*first,*last;
         List(){last=first=NULL;}
