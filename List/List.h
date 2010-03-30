@@ -27,7 +27,6 @@ class List
 		
 		int*Remove(int i);
 		int*Get(int i);
-		void List::RevList();
 	private:
 		ofstream fout; 	
 		
@@ -63,23 +62,4 @@ ostream& operator<<(ostream&out,List&x)
 	for(ListNode* tmpptr=x.first;tmpptr!=NULL;tmpptr=tmpptr->next)
 		out<<tmpptr->data;
 	return out;
-}
-
-void List::RevList()
-{
-	ListNode* r=first;
-	ListNode* l=r;
-	ListNode* m=r;
-	while(r->next)
-	{
-		r=r->next;
-		if(m==first)
-			m->next=NULL;
-		else
-			m->next=l;
-		l=m;
-		m=r;
-	}
-	r->next=l;
-	first=r;
 }
