@@ -36,7 +36,6 @@ class List
 		ListNode * FindAppropriateNode(int value);
 		
 		void IncreInsertNode(ListNode *node);
-		void PreInsert(int value);
 		void AftInsert(int value);
 		int*Remove(int i);
 		int*Get(int i);
@@ -167,22 +166,6 @@ ListNode*List::FindValue(int value)
     }
     return tmpptr;
 }
-
-void List::PreInsert(int value)
-{
-	if(!first)
-	{
-		first=new ListNode(value);
-		first->next=NULL;
-	}
-	else
-	{
-		ListNode* temp=new ListNode(value);
-		temp->next=first->next;
-		first=temp;
-	}
-}
-
 
 void List::AftInsert(int value)
 {
