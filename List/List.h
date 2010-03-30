@@ -34,12 +34,10 @@ class List
 		ListNode * FindValue(int value);
 		
 		ListNode * FindAppropriateNode(int value);
-		ListNode * FindIndex(int i);
 		
 		void IncreInsertNode(ListNode *node);
 		void PreInsert(int value);
 		void AftInsert(int value);
-		int InsertAtIndex(int value,int i);
 		int*Remove(int i);
 		int*Get(int i);
 		void List::RevList();
@@ -168,23 +166,6 @@ ListNode*List::FindValue(int value)
 			break;
     }
     return tmpptr;
-}
-
-ListNode* List::FindIndex(int i)
-{
-	if(i<-1)return NULL;
-	if(i==-1)return first;
-	ListNode*tmpptr=first;
-	for(int j=0;j<i;j++)
-		tmpptr=tmpptr->next;
-	return tmpptr->next;
-}
-
-int List::InsertAtIndex(int value,int i)
-{
-	ListNode*tmpptr=FindIndex(i-1);
-	tmpptr->next=tmpptr->GetNode(value,tmpptr->next);
-	return 1;
 }
 
 void List::PreInsert(int value)
