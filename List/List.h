@@ -9,10 +9,6 @@ class ListNode
 	public:
 		ListNode();
 		ListNode(const int& item);
-		ListNode *NextNode(){return next;}
-		
-		int RetNodeValue();
-
 	private:
 		int data;
 		ListNode* next;
@@ -38,11 +34,6 @@ class List
 		ofstream fout; 	
 		
 };
-
-int ListNode::RetNodeValue()
-{
-	return data;
-}
 
 List List::MergeCreateNew()
 {
