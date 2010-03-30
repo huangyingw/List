@@ -13,7 +13,6 @@ class ListNode
 		
 		int RetNodeValue();
 
-		ListNode*RemoveAfter();
 	private:
 		int data;
 		ListNode* next;
@@ -27,7 +26,6 @@ class List
 		List(const int value){last=first=new ListNode(value);}
 		~List();
 		
-		ListNode * FindValue(int value);
 		
 		List MergeCreateNew();
 		
@@ -56,30 +54,9 @@ ListNode::ListNode():next(NULL){}
 
 ListNode::ListNode(const int& item):data(item),next(NULL){}
 
-
-ListNode*ListNode::RemoveAfter()
-{
- 	ListNode*tmpptr=this->next;
-	this->next=tmpptr->next;
-	return tmpptr;
-}
-
 List::~List()
 {
 }
-
-ListNode*List::FindValue(int value)
-{
-	
-	ListNode* tmpptr=new ListNode;
-	for(tmpptr=this->first;tmpptr!=NULL;tmpptr=tmpptr->next)
-	{
-		if(tmpptr->data==value)
-			break;
-    }
-    return tmpptr;
-}
-
 
 istream& operator>>(istream&in,List&x)
 {
