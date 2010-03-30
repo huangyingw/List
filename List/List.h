@@ -19,7 +19,6 @@ class List
 		ListNode*first,*last;
         List(){last=first=NULL;}
 		List(const int value){last=first=new ListNode(value);}
-		~List();
 		
 		
 		List MergeCreateNew();
@@ -40,18 +39,3 @@ List List::MergeCreateNew()
 ListNode::ListNode():next(NULL){}
 
 ListNode::ListNode(const int& item):data(item),next(NULL){}
-
-List::~List()
-{
-}
-
-istream& operator>>(istream&in,List&x)
-{
-	char value;
-    in>>value;
-	while(value!='q')
-	{
-		in>>value;
-	}
-	return in;
-}
