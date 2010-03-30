@@ -30,7 +30,6 @@ class List
         List(){last=first=NULL;}
 		List(const int value){last=first=new ListNode(value);}
 		~List();
-		int Length()const;
 		
 		ListNode * FindValue(int value);
 		
@@ -159,14 +158,6 @@ List::~List()
 {
 }
 
-int List::Length()const
-{
-	int len=0;
-	for(ListNode* tmpptr=first->next;tmpptr!=NULL;tmpptr=tmpptr->next)
-		len++;
-    return len;    
-}
-
 ListNode*List::FindValue(int value)
 {
 	
@@ -183,8 +174,6 @@ ListNode* List::FindIndex(int i)
 {
 	if(i<-1)return NULL;
 	if(i==-1)return first;
-	int t=Length();
-	if(i>t)return NULL;
 	ListNode*tmpptr=first;
 	for(int j=0;j<i;j++)
 		tmpptr=tmpptr->next;
