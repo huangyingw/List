@@ -1,11 +1,10 @@
 // List.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
 #include <iostream>
-#include"List.h"
+#include"list.h"
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmain()
 {
 	List list1,list2;
 	//cin>>list1;

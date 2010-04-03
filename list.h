@@ -46,9 +46,9 @@ class List//单链表类定义
 		int InsertAtIndex(int value,int i);//将新元素value插入在链表中第i个位置
 		int*Remove(int i);//将链表中的第i个元素删去
 		int*Get(int i);//取出链表中第i个元素
-		void List::RevList();
-		ListNode* List::RevListWithRecursion(ListNode* head);//用递归的方法实现的链表逆序
-		void List::PrintFromNode(ListNode* node);//从某个指定结点开始打印链表
+		void RevList();
+		ListNode* RevListWithRecursion(ListNode* head);//用递归的方法实现的链表逆序
+		void PrintFromNode(ListNode* node);//从某个指定结点开始打印链表
 	
 		
 };
