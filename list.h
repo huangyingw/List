@@ -49,8 +49,8 @@ class List//单链表类定义
 		void RevList();
 		ListNode* RevListWithRecursion(ListNode* head);//用递归的方法实现的链表逆序
 		void PrintFromNode(ListNode* node);//从某个指定结点开始打印链表
-	
-		
+	private:
+		//ofstream fout; 	
 };
 
 
