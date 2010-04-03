@@ -4,7 +4,7 @@
 #include <iostream>
 #include"list.h"
 
-int _tmain()
+int main()
 {
 	List list1,list2;
 	//cin>>list1;
