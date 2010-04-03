@@ -31,6 +31,7 @@ class List//单链表类定义
 		ListNode*first,*last;//链表的表头指针，表尾指针
         List(){last=first=NULL;}
 		List(const int value){last=first=new ListNode(value);}
+		List(const List&);
 		~List();
 		void MakeEmpty();
 		int Length()const;
@@ -50,9 +51,13 @@ class List//单链表类定义
 		ListNode* RevListWithRecursion(ListNode* head);//用递归的方法实现的链表逆序
 		void PrintFromNode(ListNode* node);//从某个指定结点开始打印链表
 	private:
-		//ofstream fout; 	
+		ofstream fout; 	
 };
 
+List::List(const List& list)
+{
+	
+}
 
 int ListNode::RetNodeValue()//返回指定结点的值
 {
