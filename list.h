@@ -142,7 +142,7 @@ ListNode* ListNode::CreateNode(int item,ListNode* next)
 	return newnode;
 }
 
-//将一个结点插入当前链表的按data递增的合适位置，此方法使用的前提是本list已经排好序
+//Insert a node into current list, given that the current list is sorted already
 void List::IncInsertNode(ListNode *node)
 {
 	ListNode *pos=FindAppropriateNode(node->data);
