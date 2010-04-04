@@ -1,15 +1,15 @@
 using namespace std;
-class List;//前视的类定义
-class ListNode//链表结点类的声明
+class List;
+class ListNode
 {
 	friend ostream& operator<<(ostream&out,List&x);
 	friend class List;
-	friend List MergeCreateNew(List list1,List list2);//将两个链表合成第三个，
-	friend void MergeList(List list1,List list2);//将两个链表合成一个，
+	friend List MergeCreateNew(List list1,List list2);
+	friend void MergeList(List list1,List list2);
 	public:
 		ListNode();
 		ListNode(const int& item);
-		ListNode *NextNode(){return next;}//给出当前结点的下一个结点地址
+		ListNode *NextNode(){return next;}
 		void InsertAfter(ListNode*p);//当前结点插入
 		
 		int RetNodeValue();//返回指定结点的值
