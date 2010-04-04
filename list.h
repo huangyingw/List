@@ -36,20 +36,19 @@ class List
 		void MakeEmpty();
 		int Length()const;
 		
-		ListNode * FindValue(int value);
+		ListNode * FindValue(int value);//search value in list.If succeed, return the pointer to that node, if not, return null
 		
 		ListNode * FindAppropriateNode(int value);
 		ListNode * ReturnNodeObjctByIndex(int i);
 		
-		void IncInsertNode(ListNode *node);//以递增的方式建链表
+		void IncInsertNode(ListNode *node);//Insert a node into current list, given that the current list is sorted already
 		void PreInsert(int value);
 		void AftInsert(int value);
-		int InsertAtIndex(int value,int i);//将新元素value插入在链表中第i个位置
-		int*Remove(int i);//将链表中的第i个元素删去
-		int*Get(int i);//取出链表中第i个元素
+		int InsertAtIndex(int value,int i);//insert new value at index i
+		int RemoveByIndex(int i);//remove the node by index i
 		void RevList();
-		ListNode* RevListWithRecursion(ListNode* head);//用递归的方法实现的链表逆序
-		void PrintFromNode(ListNode* node);//从某个指定结点开始打印链表
+		ListNode* RevListWithRecursion(ListNode* head);
+		void PrintFromNode(ListNode* node);
 	private:
 		ofstream fout; 	
 };
@@ -196,7 +195,8 @@ int List::Length()const//
     return len;    
 }
 
-ListNode*List::FindValue(int value)//在单链表中搜索含数据value的结点，搜索成功时，函数返回该结点地址；否则返回NULL值
+//search value in list.If succeed, return the pointer to that node, if not, return null
+ListNode*List::FindValue(int value)
 {
 	
 	ListNode* tmpptr=new ListNode;
@@ -221,7 +221,8 @@ ListNode* List::ReturnNodeObjctByIndex(int i)//定位函数。函数返回链表中第i个元素
 	return tmpptr->next;
 }
 
-int List::InsertAtIndex(int value,int i)//将新元素value插入在链表中第i个位置
+//insert new value at index i
+int List::InsertAtIndex(int value,int i)
 {
 	ListNode*tmpptr=ReturnNodeObjctByIndex(i-1);//返回第i-1个元素的地址
 	tmpptr->next=tmpptr->CreateNode(value,tmpptr->next);
@@ -299,7 +300,7 @@ void List::RevList()
 	first=r;
 }
 
-void List::PrintFromNode(ListNode* node)//从某个指定结点开始打印链表
+void List::PrintFromNode(ListNode* node)
 {
 	while(NULL!=node)
 	{
