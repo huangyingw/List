@@ -10,9 +10,9 @@ class ListNode
 		ListNode();
 		ListNode(const int& item);
 		ListNode *NextNode(){return next;}
-		void InsertAfter(ListNode*p);//当前结点插入
+		void InsertAfter(ListNode*p);//Insert node after current node
 		
-		int GetNodeValue();//返回指定结点的值
+		int GetNodeValue();
 
 		ListNode* CreateNode(int item,ListNode* next);
 		ListNode*RemoveAfter();
@@ -107,7 +107,6 @@ List MergeCreateNew(List list1,List list2)//将两个链表合成第三个，
 }
 
 
-//将两个链表合并成一个，改变list1
 void MergeList(List list1,List list2)
 {
 	ListNode*p1,*p2,*temp;
@@ -122,13 +121,11 @@ void MergeList(List list1,List list2)
 }
 
 
-//下面给出类ListNode和类List的成员函数的实现
 ListNode::ListNode():next(NULL){}
 
-//构造函数，仅初始化指针成员
 ListNode::ListNode(const int& item):data(item),next(NULL){}
 
-void ListNode::InsertAfter(ListNode*p)//从当前结点插入p结点
+void ListNode::InsertAfter(ListNode*p)//Insert node after current node
 {
 	p->next=next;
 	next=p;
@@ -149,7 +146,10 @@ void List::IncInsertNode(ListNode *node)
 	pos->next=node;
 }
 		
-ListNode * List::FindAppropriateNode(int value)//在单链表中搜索数据value的适合插入结点，也即当前结点的值小于value而其后一个结点的值大于value
+/*
+Search appropriate node for value to be inserted. The appropriate node's value should be less that value, while its next's value is greated than value
+*/
+ListNode * List::FindAppropriateNode(int value)
 {
 	ListNode*tmpptr=first;
 	if(tmpptr->data>value)
