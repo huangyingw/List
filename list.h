@@ -33,7 +33,7 @@ class List
 		List(const int value){last=first=new ListNode(value);}
 		List(const List&);
 		~List();
-		void MakeEmpty();
+		void ClearList();
 		int Length()const;
 		
 		ListNode * FindValue(int value);//search value in list.If succeed, return the pointer to that node, if not, return null
@@ -42,7 +42,7 @@ class List
 		ListNode * ReturnNodeObjctByIndex(int i);
 		
 		void IncInsertNode(ListNode *node);//Insert a node into current list, given that the current list is sorted already
-		void PreInsert(int value);
+		void InsertAtFirst(int value);
 		void AftInsert(int value);
 		int InsertAtIndex(int value,int i);//insert new value at index i
 		int RemoveByIndex(int i);//remove the node by index i
@@ -173,7 +173,7 @@ List::~List()
 	
 }
 
-void List::MakeEmpty()//将链表置为空表
+void List::ClearList()
 {
 	ListNode*q;
 	while(first->next!=NULL)
@@ -182,7 +182,7 @@ void List::MakeEmpty()//将链表置为空表
 		first=q->next;
 		delete q;
 	}
-	last=first;//将尾指针指向first
+	last=first;
 }
 
 int List::Length()const//
@@ -208,11 +208,10 @@ ListNode*List::FindValue(int value)
     return tmpptr;
 }
 
-ListNode* List::ReturnNodeObjctByIndex(int i)//定位函数。函数返回链表中第i个元素的地址。若i<-1或i超出表中结点个数，则返回NULL。
+ListNode* List::ReturnNodeObjctByIndex(int i)
 {
 	if(i<-1)return NULL;
 	if(i==-1)return first;
-	//表中结点个数用lenth函数返回给临时变量t
 	int t=Length();
 	if(i>t)return NULL;
 	ListNode*tmpptr=first;
@@ -224,12 +223,12 @@ ListNode* List::ReturnNodeObjctByIndex(int i)//定位函数。函数返回链表中第i个元素
 //insert new value at index i
 int List::InsertAtIndex(int value,int i)
 {
-	ListNode*tmpptr=ReturnNodeObjctByIndex(i-1);//返回第i-1个元素的地址
+	ListNode*tmpptr=ReturnNodeObjctByIndex(i-1);
 	tmpptr->next=tmpptr->CreateNode(value,tmpptr->next);
 	return 1;
 }
 
-void List::PreInsert(int value)//在first头结点处插入数据
+void List::InsertAtFirst(int value)//在first头结点处插入数据
 {
 	if(!first)
 	{
