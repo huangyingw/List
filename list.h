@@ -228,7 +228,7 @@ int List::InsertAtIndex(int value,int i)
 	return 1;
 }
 
-void List::InsertAtFirst(int value)//在first头结点处插入数据
+void List::InsertAtFirst(int value)
 {
 	if(!first)
 	{
@@ -244,7 +244,7 @@ void List::InsertAtFirst(int value)//在first头结点处插入数据
 }
 
 
-void List::InsertAtLast(int value)//在结尾插入数据
+void List::InsertAtLast(int value)
 {
 	if(!first)
 	{

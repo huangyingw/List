@@ -13,11 +13,11 @@ int main()
 	list1.InsertAtLast('3'-48);
 	list1.InsertAtLast('2'-48);
 	list1.InsertAtLast('1'-48);
-	/*cin>>list2;
+	/*
+	cin>>list2;
 	cout<<MergeCreateNew(list1,list2);
 	cout<<endl;
 	MergeList(list1,list2);
-	
 	*/
 	list1.first=list1.RevListWithRecursion(list1.first);
 	cout<<list1<<endl;
