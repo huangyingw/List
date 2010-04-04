@@ -52,7 +52,7 @@ class List
 		ListNode* RevListWithRecursion(ListNode* head);
 		void PrintFromNode(ListNode* node);
 	private:
-		ofstream fout; 	
+		ofstream fout;
 };
 
 List::List(const List& list)
@@ -135,7 +135,7 @@ void ListNode::InsertAfter(ListNode*p)//Insert node after current node
 
 ListNode* ListNode::CreateNode(int item,ListNode* next)
 {
-    ListNode*newnode=new ListNode(item);
+	ListNode*newnode=new ListNode(item);
 	newnode->next=next;
 	return newnode;
 }
@@ -189,12 +189,10 @@ void List::ClearList()
 
 int List::Length()const//
 {
-	//计算带表头结点的单链表的长度
-	//定义一个变量len用于计数
 	int len=0;
 	for(ListNode* tmpptr=first->next;tmpptr!=NULL;tmpptr=tmpptr->next)
 		len++;
-    return len;    
+  return len;    
 }
 
 //search value in list.If succeed, return the pointer to that node, if not, return null
@@ -305,10 +303,10 @@ void List::PrintFromNode(ListNode* node)
 {
 	while(NULL!=node)
 	{
-		cout<<node->data<<",";
+		fout<<node->data<<",";
 		node=node->next;
 	}
-	cout<<endl;
+	fout<<endl;
 }
 
 ListNode* List::RevListWithRecursion(ListNode* head)
@@ -325,7 +323,7 @@ ListNode* List::RevListWithRecursion(ListNode* head)
 	else
 	{
 		rhead=RevListWithRecursion(head->next);
-		cout<<head->data<<endl;
+		fout<<head->data<<endl;
 		head->next->next=head;
 		head->next=NULL;
 		return rhead;
