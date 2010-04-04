@@ -41,7 +41,7 @@ class List
 		ListNode * FindAppropriateNode(int value);
 		ListNode * ReturnNodeObjctByIndex(int i);
 		
-		void IncreInsertNode(ListNode *node);//以递增的方式建链表
+		void IncInsertNode(ListNode *node);//以递增的方式建链表
 		void PreInsert(int value);
 		void AftInsert(int value);
 		int InsertAtIndex(int value,int i);//将新元素value插入在链表中第i个位置
@@ -118,7 +118,7 @@ void MergeList(List list1,List list2)
 	{
 		temp=new ListNode(p2->data);
 		p2=p2->next;
-		list1.IncreInsertNode(temp);
+		list1.IncInsertNode(temp);
 	}
 }
 
@@ -143,7 +143,7 @@ ListNode* ListNode::CreateNode(int item,ListNode* next)
 }
 
 //将一个结点插入当前链表的按data递增的合适位置，此方法使用的前提是本list已经排好序
-void List::IncreInsertNode(ListNode *node)
+void List::IncInsertNode(ListNode *node)
 {
 	ListNode *pos=FindAppropriateNode(node->data);
 	node->next=pos->next;
