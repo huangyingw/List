@@ -12,7 +12,7 @@ class ListNode
 		ListNode *NextNode(){return next;}
 		void InsertAfter(ListNode*p);//当前结点插入
 		
-		int RetNodeValue();//返回指定结点的值
+		int GetNodeValue();//返回指定结点的值
 
 		ListNode* CreateNode(int item,ListNode* next);
 		ListNode*RemoveAfter();
@@ -58,7 +58,7 @@ List::List(const List& list)
 	
 }
 
-int ListNode::RetNodeValue()//返回指定结点的值
+int ListNode::GetNodeValue()//返回指定结点的值
 {
 	return data;
 }
