@@ -31,8 +31,8 @@ class List
 	friend void MergeList(List list1,List list2);
 	public:
 		ListNode*first,*last;
-        List(){last=first=NULL;}
-		List(const int value){last=first=new ListNode(value);}
+    List(){last=first=NULL;fout.open("output.txt");}
+		List(const int value){last=first=new ListNode(value);fout.open("output.txt");}
 		List(const List&);
 		~List();
 		void ClearList();
@@ -172,7 +172,7 @@ ListNode*ListNode::RemoveNextNode()//Remove the next node from current list and 
 
 List::~List()
 {
-	
+	fout.close();
 }
 
 void List::ClearList()
