@@ -43,7 +43,7 @@ class List
 		
 		void IncInsertNode(ListNode *node);//Insert a node into current list, given that the current list is sorted already
 		void InsertAtFirst(int value);
-		void AftInsert(int value);
+		void InsertAtLast(int value);
 		int InsertAtIndex(int value,int i);//insert new value at index i
 		int RemoveByIndex(int i);//remove the node by index i
 		void RevList();
@@ -72,35 +72,35 @@ List MergeCreateNew(List list1,List list2)
 	p2=list2.first;
 	if(p1->data<p2->data)
 	{
-		result.AftInsert(p1->data);
+		result.InsertAtLast(p1->data);
 		p1=p1->next;
 	}
 	else
 	{
-		result.AftInsert(p2->data);
+		result.InsertAtLast(p2->data);
 		p2=p2->next;
 	}
 	while(p1&&p2)
 	{
 		if(p1->data<p2->data)
 		{
-			result.AftInsert(p1->data);
+			result.InsertAtLast(p1->data);
 			p1=p1->next;
 		}
 		else
 		{
-			result.AftInsert(p2->data);
+			result.InsertAtLast(p2->data);
 			p2=p2->next;
 		}
 	}
 	while(p1)
 	{
-		result.AftInsert(p1->data);
+		result.InsertAtLast(p1->data);
 		p1=p1->next;
 	}
 	while(p2)
 	{
-		result.AftInsert(p2->data);
+		result.InsertAtLast(p2->data);
 		p2=p2->next;
 	}
 	return result;
@@ -244,14 +244,14 @@ void List::InsertAtFirst(int value)//在first头结点处插入数据
 }
 
 
-void List::AftInsert(int value)//在结尾插入数据
+void List::InsertAtLast(int value)//在结尾插入数据
 {
 	if(!first)
 	{
 		first=new ListNode(value);
 		first->next=NULL;
 		last=first;
-    }
+  }
 	else
 	{
 		ListNode* temp=new ListNode(value);
@@ -267,7 +267,7 @@ istream& operator>>(istream&in,List&x)
     in>>value;
 	while(value!='q')
 	{
-		x.AftInsert(value-48);
+		x.InsertAtLast(value-48);
 		in>>value;
 	}
 	return in;

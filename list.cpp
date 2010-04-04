@@ -9,10 +9,10 @@ int main()
 {
 	List list1,list2;
 	//cin>>list1;
-	list1.AftInsert('4'-48);
-	list1.AftInsert('3'-48);
-	list1.AftInsert('2'-48);
-	list1.AftInsert('1'-48);
+	list1.InsertAtLast('4'-48);
+	list1.InsertAtLast('3'-48);
+	list1.InsertAtLast('2'-48);
+	list1.InsertAtLast('1'-48);
 	/*cin>>list2;
 	cout<<MergeCreateNew(list1,list2);
 	cout<<endl;
