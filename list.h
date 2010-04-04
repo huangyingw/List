@@ -36,10 +36,10 @@ class List
 		void MakeEmpty();
 		int Length()const;
 		
-		ListNode * FindValue(int value);//在单链表中搜索含数据value的结点，搜索成功时，函数返回该结点地址；否则返回NULL值
+		ListNode * FindValue(int value);
 		
-		ListNode * FindAppropriateNode(int value);//在单链表中搜索数据value的适合插入结点，也即当前结点的值小于value而其后一个结点的值大于value
-		ListNode * FindIndex(int i);//搜索链表中第i个元素的地址
+		ListNode * FindAppropriateNode(int value);
+		ListNode * ReturnNodeObjctByIndex(int i);
 		
 		void IncreInsertNode(ListNode *node);//以递增的方式建链表
 		void PreInsert(int value);
@@ -208,7 +208,7 @@ ListNode*List::FindValue(int value)//在单链表中搜索含数据value的结点，搜索成功时
     return tmpptr;
 }
 
-ListNode* List::FindIndex(int i)//定位函数。函数返回链表中第i个元素的地址。若i<-1或i超出表中结点个数，则返回NULL。
+ListNode* List::ReturnNodeObjctByIndex(int i)//定位函数。函数返回链表中第i个元素的地址。若i<-1或i超出表中结点个数，则返回NULL。
 {
 	if(i<-1)return NULL;
 	if(i==-1)return first;
@@ -223,7 +223,7 @@ ListNode* List::FindIndex(int i)//定位函数。函数返回链表中第i个元素的地址。若i<-
 
 int List::InsertAtIndex(int value,int i)//将新元素value插入在链表中第i个位置
 {
-	ListNode*tmpptr=FindIndex(i-1);//返回第i-1个元素的地址
+	ListNode*tmpptr=ReturnNodeObjctByIndex(i-1);//返回第i-1个元素的地址
 	tmpptr->next=tmpptr->CreateNode(value,tmpptr->next);
 	return 1;
 }
