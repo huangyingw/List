@@ -15,7 +15,7 @@ class ListNode
 		int GetNodeValue();
 
 		ListNode* CreateNode(int item,ListNode* next);
-		ListNode*RemoveNextNode();
+		ListNode*RemoveNextNode();//Remove the next node from current list and return the next node's pointer
 	private:
 		int data;
 		ListNode* next;
@@ -58,13 +58,13 @@ List::List(const List& list)
 	
 }
 
-int ListNode::GetNodeValue()//返回指定结点的值
+int ListNode::GetNodeValue()
 {
 	return data;
 }
 
 
-List MergeCreateNew(List list1,List list2)//将两个链表合成第三个，
+List MergeCreateNew(List list1,List list2)
 {
 	List result;
 	ListNode*p1,*p2;
@@ -161,24 +161,24 @@ ListNode * List::FindAppropriateNode(int value)
 	return tmpptr;
 }
 		
-ListNode*ListNode::RemoveNextNode()//从链中摘下当前结点的下一结点，并为删除它而返回其地址
+ListNode*ListNode::RemoveNextNode()//Remove the next node from current list and return the next node's pointer
 {
- 	ListNode*tmpptr=this->next;//tmpptr为我自己定义的临时变量;
+ 	ListNode*tmpptr=this->next;
 	this->next=tmpptr->next;
 	return tmpptr;
 }
 
 List::~List()
 {
-	//析构函数
+	
 }
 
 void List::MakeEmpty()//将链表置为空表
 {
 	ListNode*q;
 	while(first->next!=NULL)
-    {
-		q=first->next;//q为临时定义的变量，用完之后得删除
+  {
+		q=first->next;
 		first=q->next;
 		delete q;
 	}
