@@ -14,7 +14,7 @@ class ListNode
 		
 		int RetNodeValue();//返回指定结点的值
 
-		ListNode* GetNode(int item,ListNode* next);//建立一个新结点
+		ListNode* CreateNode(int item,ListNode* next);//建立一个新结点
 		ListNode*RemoveAfter();//删除当前结点的下一结点
 	private:
 		int data;//数据域
@@ -135,7 +135,7 @@ void ListNode::InsertAfter(ListNode*p)//从当前结点插入p结点
 	next=p;
 }
 
-ListNode* ListNode::GetNode(int item,ListNode* next)
+ListNode* ListNode::CreateNode(int item,ListNode* next)
 {
     ListNode*newnode=new ListNode(item);
 	newnode->next=next;
@@ -224,7 +224,7 @@ ListNode* List::FindIndex(int i)//定位函数。函数返回链表中第i个元素的地址。若i<-
 int List::InsertAtIndex(int value,int i)//将新元素value插入在链表中第i个位置
 {
 	ListNode*tmpptr=FindIndex(i-1);//返回第i-1个元素的地址
-	tmpptr->next=tmpptr->GetNode(value,tmpptr->next);
+	tmpptr->next=tmpptr->CreateNode(value,tmpptr->next);
 	return 1;
 }
 
