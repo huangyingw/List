@@ -15,7 +15,7 @@ class ListNode
 		int GetNodeValue();
 
 		ListNode* CreateNode(int item,ListNode* next);
-		ListNode*RemoveAfter();
+		ListNode*RemoveNextNode();
 	private:
 		int data;
 		ListNode* next;
@@ -161,7 +161,7 @@ ListNode * List::FindAppropriateNode(int value)
 	return tmpptr;
 }
 		
-ListNode*ListNode::RemoveAfter()//从链中摘下当前结点的下一结点，并为删除它而返回其地址
+ListNode*ListNode::RemoveNextNode()//从链中摘下当前结点的下一结点，并为删除它而返回其地址
 {
  	ListNode*tmpptr=this->next;//tmpptr为我自己定义的临时变量;
 	this->next=tmpptr->next;
