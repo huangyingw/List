@@ -48,7 +48,7 @@ class List
 		void InsertAtLast(int value);
 		int InsertAtIndex(int value,int i);//insert new value at index i
 		int RemoveByIndex(int i);//remove the node by index i
-		void RevList();
+		void RevList();//reverse list with pure pointer operation
 		ListNode* RevListWithRecursion(ListNode* head);
 		void PrintFromNode(ListNode* node);
 	private:
@@ -287,6 +287,7 @@ void List::RevList()
 	ListNode* m=r;
 	while(r->next)
 	{
+		fout<<"l->"<<l->data<<",m->"<<m->data<<",r->"<<r->data<<endl;
 		r=r->next;
 		if(m==first)
 			m->next=NULL;
@@ -294,6 +295,7 @@ void List::RevList()
 			m->next=l;
 		l=m;
 		m=r;
+		fout<<"l->"<<l->data<<",m->"<<m->data<<",r->"<<r->data<<endl<<endl;
 	}
 	r->next=l;
 	first=r;
@@ -314,18 +316,22 @@ ListNode* List::RevListWithRecursion(ListNode* head)
 	ListNode* rhead;
 	if(NULL==head)
 	{
+		fout<<endl;
 		return head;
 	}
 	else if(NULL==head->next)
 	{
+		fout<<endl;
 		return head;
 	}
 	else
 	{
+		fout<<"before->"<<head->data<<",";
 		rhead=RevListWithRecursion(head->next);
-		fout<<head->data<<endl;
+		fout<<"after->"<<head->data<<endl;
 		head->next->next=head;
 		head->next=NULL;
+		fout<<"return->"<<rhead->data<<endl;
 		return rhead;
 	}
 }
