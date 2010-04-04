@@ -14,21 +14,21 @@ class ListNode
 		
 		int RetNodeValue();//返回指定结点的值
 
-		ListNode* CreateNode(int item,ListNode* next);//建立一个新结点
-		ListNode*RemoveAfter();//删除当前结点的下一结点
+		ListNode* CreateNode(int item,ListNode* next);
+		ListNode*RemoveAfter();
 	private:
-		int data;//数据域
-		ListNode* next;//链指针域
+		int data;
+		ListNode* next;
 };
 
-class List//单链表类定义
+class List
 {
 	friend ostream& operator<<(ostream&out,List&x);
 	friend istream& operator>>(istream&,List&);
-	friend List MergeCreateNew(List list1,List list2);//将两个链表合成第三个，
-	friend void MergeList(List list1,List list2);//将两个链表合成一个，
+	friend List MergeCreateNew(List list1,List list2);
+	friend void MergeList(List list1,List list2);
 	public:
-		ListNode*first,*last;//链表的表头指针，表尾指针
+		ListNode*first,*last;
         List(){last=first=NULL;}
 		List(const int value){last=first=new ListNode(value);}
 		List(const List&);
