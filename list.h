@@ -284,23 +284,21 @@ void List::RevList()
 {
 	ListNode* r=first;
 	ListNode* l=r;
+	ListNode* m=r;
 	while(r->next)
 	{
-		fout<<"l->"<<l->data<<",l->next->"<<r->next->data<<endl;
-		r=r->next->next;
-		l->next->next=l;
-		if(l==first)
-			//l->next=NULL;
-			
-		fout<<"l->"<<l->data<<",next->"<<l->next->data<<endl;
-		//PrintFromNode(l->next);
-		fout<<endl;
-		l=r;
+		fout<<"l->"<<l->data<<",m->"<<m->data<<",r->"<<r->data<<endl;
+		r=r->next;
+		if(m==first)
+			m->next=NULL;
+		else
+			m->next=l;
+		l=m;
+		m=r;
+		fout<<"l->"<<l->data<<",m->"<<m->data<<",r->"<<r->data<<endl<<endl;
 	}
-	/*
 	r->next=l;
 	first=r;
-	*/
 }
 
 void List::PrintFromNode(ListNode* node)

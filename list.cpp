@@ -25,7 +25,7 @@ int main()
 	list1.PrintFromNode(list1.first);
 	//list1.first=list1.RevListWithRecursion(list1.first);
 	list1.RevList();
-	//list1.PrintFromNode(list1.first);
+	list1.PrintFromNode(list1.first);
 	//cout<<list1<<endl;
 	return 0;
 }
