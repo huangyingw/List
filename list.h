@@ -284,7 +284,7 @@ void List::RevList()
 {
 	ListNode* r=first;
 	ListNode* l=r;
-	//while(r->next)
+	while(r->next)
 	{
 		fout<<"l->"<<l->data<<",r->"<<r->data<<endl;
 		r=r->next;
@@ -293,7 +293,6 @@ void List::RevList()
 			l->next=NULL;
 			
 		fout<<"l->"<<l->data<<",r->"<<r->data<<endl;
-		//fout<<"r->"<<r->data<<",r->next"<<r->next->data<<endl<<endl;
 		PrintFromNode(r);
 		fout<<endl;
 		l=r;
