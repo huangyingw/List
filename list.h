@@ -291,8 +291,9 @@ void List::RevList()
 		if(l==first)
 			l->next=NULL;
 		else
-			r->next=l;
+			l->next->next=l;
 		fout<<"l->"<<l->data<<",r->"<<r->data<<endl<<endl;
+		PrintFromNode(r);
 		l=r;
 	}
 	r->next=l;
