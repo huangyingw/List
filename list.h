@@ -45,7 +45,6 @@ class List
   void InsertAtLast(int value);
   void RevList();
   ListNode* RevListWithRecursion(ListNode* head);
-  void PrintFromNode(ListNode* node);
   private:
   ofstream fout; 	
 };
@@ -271,16 +270,6 @@ void List::RevList()
   }
   r->next=l;
   first=r;
-}
-
-void List::PrintFromNode(ListNode* node)
-{
-  while(NULL!=node)
-  {
-    cout<<node->data<<",";
-    node=node->next;
-  }
-  cout<<endl;
 }
 
 ListNode* List::RevListWithRecursion(ListNode* head)
