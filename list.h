@@ -42,10 +42,7 @@ class List
   ListNode * ReturnNodeObjctByIndex(int i);
 
   void IncInsertNode(ListNode *node);//Insert a node into current list, given that the current list is sorted already
-  void InsertAtFirst(int value);
   void InsertAtLast(int value);
-  int InsertAtIndex(int value,int i);//insert new value at index i
-  int RemoveByIndex(int i);//remove the node by index i
   void RevList();
   ListNode* RevListWithRecursion(ListNode* head);
   void PrintFromNode(ListNode* node);
@@ -221,29 +218,6 @@ ListNode* List::ReturnNodeObjctByIndex(int i)
 }
 
 //insert new value at index i
-int List::InsertAtIndex(int value,int i)
-{
-  ListNode*tmpptr=ReturnNodeObjctByIndex(i-1);
-  tmpptr->next=tmpptr->CreateNode(value,tmpptr->next);
-  return 1;
-}
-
-void List::InsertAtFirst(int value)
-{
-  if(!first)
-  {
-    first=new ListNode(value);
-    first->next=NULL;
-  }
-  else
-  {
-    ListNode* temp=new ListNode(value);
-    temp->next=first->next;
-    first=temp;
-  }
-}
-
-
 void List::InsertAtLast(int value)
 {
   if(!first)
