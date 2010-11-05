@@ -38,7 +38,6 @@ class List
 
 
   ListNode * FindAppropriateNode(int value);
-  ListNode * ReturnNodeObjctByIndex(int i);
 
   void IncInsertNode(ListNode *node);//Insert a node into current list, given that the current list is sorted already
   void InsertAtLast(int value);
@@ -188,18 +187,6 @@ int List::Length()const//
   for(ListNode* tmpptr=first->next;tmpptr!=NULL;tmpptr=tmpptr->next)
     len++;
   return len;    
-}
-
-ListNode* List::ReturnNodeObjctByIndex(int i)
-{
-  if(i<-1)return NULL;
-  if(i==-1)return first;
-  int t=Length();
-  if(i>t)return NULL;
-  ListNode*tmpptr=first;
-  for(int j=0;j<i;j++)
-    tmpptr=tmpptr->next;
-  return tmpptr->next;
 }
 
 //insert new value at index i
