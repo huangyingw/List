@@ -34,7 +34,6 @@ class List
   List(const List&);
   ~List();
   void ClearList();
-  int Length()const;
 
 
   ListNode * FindAppropriateNode(int value);
@@ -177,16 +176,6 @@ void List::ClearList()
     delete q;
   }
   last=first;
-}
-
-int List::Length()const//
-{
-  //计算带表头结点的单链表的长度
-  //定义一个变量len用于计数
-  int len=0;
-  for(ListNode* tmpptr=first->next;tmpptr!=NULL;tmpptr=tmpptr->next)
-    len++;
-  return len;    
 }
 
 //insert new value at index i
