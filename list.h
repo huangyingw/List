@@ -36,7 +36,6 @@ class List
   void ClearList();
   int Length()const;
 
-  ListNode * FindValue(int value);//search value in list.If succeed, return the pointer to that node, if not, return null
 
   ListNode * FindAppropriateNode(int value);
   ListNode * ReturnNodeObjctByIndex(int i);
@@ -189,19 +188,6 @@ int List::Length()const//
   for(ListNode* tmpptr=first->next;tmpptr!=NULL;tmpptr=tmpptr->next)
     len++;
   return len;    
-}
-
-//search value in list.If succeed, return the pointer to that node, if not, return null
-ListNode*List::FindValue(int value)
-{
-
-  ListNode* tmpptr=new ListNode;
-  for(tmpptr=this->first;tmpptr!=NULL;tmpptr=tmpptr->next)
-  {
-    if(tmpptr->data==value)
-      break;
-  }
-  return tmpptr;
 }
 
 ListNode* List::ReturnNodeObjctByIndex(int i)
