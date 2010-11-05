@@ -34,10 +34,7 @@ class List
   List(const List&);
   ~List();
   void ClearList();
-
-
   ListNode * FindAppropriateNode(int value);
-
   void IncInsertNode(ListNode *node);//Insert a node into current list, given that the current list is sorted already
   void InsertAtLast(int value);
   void RevList();
