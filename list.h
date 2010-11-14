@@ -45,7 +45,6 @@ class List
 
 List::List(const List& list)
 {
-
 }
 
 int ListNode::GetNodeValue()
