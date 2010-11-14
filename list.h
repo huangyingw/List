@@ -40,7 +40,7 @@ class List
   void RevList();
   ListNode* RevListWithRecursion(ListNode* head);
   private:
-  ofstream fout; 	
+  ofstream fout;
 };
 
 List::List(const List& list)
