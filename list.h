@@ -240,7 +240,6 @@ ListNode* List::RevListWithRecursion(ListNode* head)
   else
   {
     rhead=RevListWithRecursion(head->next);
-    cout<<head->data<<endl;
     head->next->next=head;
     head->next=NULL;
     return rhead;
