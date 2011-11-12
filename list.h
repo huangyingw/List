@@ -233,7 +233,7 @@ void List::RevList()
 ListNode* List::RevListWithRecursion(ListNode* head)
 {
   ListNode* rhead;
-  if(NULL==head->next)
+  if(!head->next)
   {
     return head;
   }
