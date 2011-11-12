@@ -233,18 +233,13 @@ void List::RevList()
 ListNode* List::RevListWithRecursion(ListNode* head)
 {
   ListNode* rhead;
-  if(NULL==head)
-  {
-    return head;
-  }
-  else if(NULL==head->next)
+  if(NULL==head->next)
   {
     return head;
   }
   else
   {
     rhead=RevListWithRecursion(head->next);
-    cout<<head->data<<endl;
     head->next->next=head;
     head->next=NULL;
     return rhead;
